@@ -12,3 +12,4 @@
 /home/artur/Documentos/csharp/sistemaHospitalar/obj/Debug/net8.0/sistemaHospitalar.pdb
 /home/artur/Documentos/csharp/sistemaHospitalar/obj/Debug/net8.0/sistemaHospitalar.genruntimeconfig.cache
 /home/artur/Documentos/csharp/sistemaHospitalar/obj/Debug/net8.0/ref/sistemaHospitalar.dll
+/home/artur/Documentos/csharp/sistemaHospitalar/obj/Debug/net8.0/sistemaHospitalar.sourcelink.json

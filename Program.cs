@@ -7,11 +7,12 @@ namespace Sistema
         static void Main(string[] args)
         {
             Console.WriteLine("BEM VINDO AO SISTEMA HOSPITALAR");
-            Paciente[] filaPreferencial = new Paciente[15];
-            Paciente[] filaNormal = new Paciente[15];
+            Paciente[] fila = new Paciente[15];
+
             string opcao;
-            int qtdPreferencial = 0;
-            int qtdNormal = 0;
+            int qtdfila = 0;
+
+
 
 
 
@@ -52,6 +53,10 @@ namespace Sistema
             void cadastrarPaciente()
             {
 
+
+
+
+
                 Paciente p = new Paciente();
                 Console.WriteLine("Nome:");
                 p.nome = Console.ReadLine();
@@ -73,32 +78,60 @@ namespace Sistema
                     p.prioridade = false;
                 }
 
+
+
                 // Adicionando ele a fila 
                 if (p.prioridade == true)
                 {
-                    filaPreferencial[qtdPreferencial] = p;
-                    qtdPreferencial++;
+                    int posicao = 0;
+                    while (posicao < qtdfila && fila[posicao].prioridade == true)
+                    {
+                        posicao++;
+                    }
+                    for (int con = qtdfila; con > posicao; con--)
+                    {
+                        fila[con] = fila[con - 1];
+                    }
+
+
+                    fila[posicao] = p;
                 }
                 else
                 {
-                    filaNormal[qtdNormal] = p;
-                    qtdPreferencial++;
+                    fila[qtdfila] = p;
                 }
+                qtdfila++;
+
+                Console.WriteLine(fila[1]);
 
 
 
-                    Console.WriteLine(p.nome + " Paciente Cadastrado com Sucesso");
+                Console.WriteLine(p.nome + " Paciente Cadastrado com Sucesso");
+
             }
-
             void mostrarPacientes()
             {
 
-                for (int i = 0; i < 15; i++)
+                for (int i = 0; i < qtdfila; i++)
                 {
-                    Console.WriteLine(filaPreferencial[i]);
-                    Console.WriteLine(filaNormal[i]);
+                    Console.WriteLine($"{fila[i].nome}, Idade: {fila[i].idade} CPF: {fila[i].cpf}");
+                    if (fila[i].prioridade == true)
+                    {
+                        Console.Write("É Preferencial");
                     }
-                
+                    else
+                    {
+                        Console.WriteLine("Não é Preferencial");
+                    }
+                }
+            }
+            void atenderpaciente()
+            { 
+                if (qtdfila == 0)
+                {
+                    Console.Write("FILA VAZIA");
+                }
+
             }
         }
     }
