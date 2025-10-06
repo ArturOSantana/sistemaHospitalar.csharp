@@ -1,5 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using System.Net.NetworkInformation;
+
 namespace Sistema
 {
     internal class Program
@@ -36,18 +38,20 @@ namespace Sistema
                         mostrarPacientes();
                         break;
                     case "3":
-                        cadastrarPaciente();
+                        atenderpaciente();
                         break;
                     case "4":
                         cadastrarPaciente();
                         break;
                     case "q":
-                        break;
                     case "Q":
                         break;
 
+                    default:
+                        Console.WriteLine("Opção Invalida");
+                        break;
                 }
-            } while (opcao != "q");
+            } while (opcao != "q" && opcao != "Q");
 
 
             void cadastrarPaciente()
@@ -88,9 +92,9 @@ namespace Sistema
                     {
                         posicao++;
                     }
-                    for (int con = qtdfila; con > posicao; con--)
+                    for (int i = qtdfila; i> posicao; i--)
                     {
-                        fila[con] = fila[con - 1];
+                        fila[i] = fila[i- 1];
                     }
 
 
@@ -101,6 +105,7 @@ namespace Sistema
                     fila[qtdfila] = p;
                 }
                 qtdfila++;
+                Console.WriteLine($"QUANTIDADE DE PESSOAS NA FILA {qtdfila} ");
 
                 Console.WriteLine(fila[1]);
 
@@ -111,26 +116,99 @@ namespace Sistema
             }
             void mostrarPacientes()
             {
-
+               
                 for (int i = 0; i < qtdfila; i++)
                 {
-                    Console.WriteLine($"{fila[i].nome}, Idade: {fila[i].idade} CPF: {fila[i].cpf}");
+                     string r;
+                    
                     if (fila[i].prioridade == true)
                     {
-                        Console.Write("É Preferencial");
+                        
+                         Console.WriteLine($"{fila[i].nome}, Idade: {fila[i].idade} CPF: {fila[i].cpf} É Prefencial? SIM");
                     }
                     else
                     {
-                        Console.WriteLine("Não é Preferencial");
+                       
+                         Console.WriteLine($"{fila[i].nome}, Idade: {fila[i].idade} CPF: {fila[i].cpf} É Prefencial? NÃO");
                     }
+                   
                 }
             }
             void atenderpaciente()
-            { 
+            {
                 if (qtdfila == 0)
                 {
-                    Console.Write("FILA VAZIA");
+                    Console.WriteLine("FILA VAZIA");
+
                 }
+                else
+                {
+                    Console.WriteLine($"Atendendo {fila[0].nome}");
+
+                    for (int i = 0; qtdfila < i; i++)
+                    {
+                        fila[i] = fila[i + 1];
+                    }
+                    fila[qtdfila - 1] = null;
+                    qtdfila--;
+                }
+
+            void alterarDado()
+                {
+                    if (qtdfila == 0)
+                    {
+                        Console.WriteLine("FILA VAZIA");
+                    }
+                    else
+                    {
+
+
+
+                        Console.WriteLine("Digite o indice do paciente");
+                        int indice = int.Parse(Console.ReadLine());
+                        Console.WriteLine($"O paciente selecionado foi: {fila[indice].nome}, Idade: {fila[indice].idade} CPF: {fila[indice].cpf} Preferencial: {fila[indice].prioridade}");
+
+                        string alterador;
+                        do
+                        {
+                            Console.WriteLine("Escolha uma opção:");
+                            Console.WriteLine(" 1 - Alterar nome");
+                            Console.WriteLine(" 2 - Alterar idade");
+                            Console.WriteLine(" 3 - Alterar CPF ");
+                            Console.WriteLine(" 4 - Aleterar Prioridade");
+                            Console.WriteLine(" Q - sair");
+                            alterador = Console.ReadLine();
+                            switch (alterador)
+                            {
+                                case "1":
+                                    Console.WriteLine("Digite o Nome:");
+                                    fila[indice].nome = Console.ReadLine();
+                                    break;
+                                case "2":
+                                    Console.WriteLine("Digite a Idade:");
+                                    fila[indice].idade = int.Parse(Console.ReadLine());
+                                    break;
+                                case "3":
+                                    Console.WriteLine("Digite o CPF:");
+                                    fila[indice].cpf = Console.ReadLine();
+                                    break;
+                                case "4":
+                                    Console.WriteLine("É preferencial ?");
+                                    string resposta = Console.ReadLine();
+                                
+                                    break;
+                                case "q":
+                                case "Q":
+                                    Console.WriteLine("SAIR");
+                                    break;
+
+                            }
+                        }
+                        while (opcao != "q" && opcao != "Q");
+                    }             
+                
+                
+            }
 
             }
         }
