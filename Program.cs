@@ -132,7 +132,7 @@ namespace Sistema
                     else
                     {
 
-                        Console.WriteLine($"\n{fila[i].nome}\nIdade: {fila[i].idade}\nCPF: {fila[i].cpf}\nÉ Prefencial? NÃO");
+                        Console.WriteLine($" \n Codigo do Paciente: {i} - Nome:{fila[i].nome}\nIdade: {fila[i].idade}\nCPF: {fila[i].cpf}\nÉ Prefencial? NÃO");
                         Console.WriteLine("-------------------------");
                     }
 
@@ -225,4 +225,5 @@ namespace Sistema
 
         
     }
+
 
