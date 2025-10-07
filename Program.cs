@@ -126,7 +126,7 @@ namespace Sistema
                     if (fila[i].prioridade == true)
                     {
 
-                        Console.WriteLine($"\n{fila[i].nome}, \nIdade: {fila[i].idade} \nCPF: {fila[i].cpf} \n1 É Prefencial? SIM");
+                        Console.WriteLine($" \n Codigo do Paciente: {i} - Nome: {fila[i].nome}, \nIdade: {fila[i].idade} \nCPF: {fila[i].cpf} \nÉ Prefencial? SIM");
                         Console.WriteLine("-------------------------");
                     }
                     else
@@ -167,8 +167,15 @@ namespace Sistema
                     else
                     {
 
-                        Console.WriteLine("Digite o indice do paciente");
+                        Console.WriteLine("Digite o codigo do paciente");
                         int indice = int.Parse(Console.ReadLine());
+
+                    if (indice >= qtdfila)
+                    {
+                        Console.WriteLine("Invalido");
+                        }
+
+
                         Console.WriteLine($"O paciente selecionado foi: {fila[indice].nome}, Idade: {fila[indice].idade} CPF: {fila[indice].cpf} Preferencial: {fila[indice].prioridade}");
 
                         string alterador;
@@ -207,7 +214,7 @@ namespace Sistema
 
                             }
                         }
-                        while (opcao != "q" && opcao != "Q");
+                        while (alterador!= "q" && alterador != "Q");
                     }             
                 
                 
