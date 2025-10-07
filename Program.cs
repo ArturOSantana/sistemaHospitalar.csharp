@@ -36,7 +36,7 @@ namespace Sistema
                         atenderpaciente();
                         break;
                     case "4":
-                        cadastrarPaciente();
+                        alterarDados();
                         break;
                     case "q":
                     case "Q":
@@ -127,6 +127,7 @@ namespace Sistema
                     {
 
                         Console.WriteLine($"\n{fila[i].nome}, \nIdade: {fila[i].idade} \nCPF: {fila[i].cpf} \n1 É Prefencial? SIM");
+                        Console.WriteLine("-------------------------");
                     }
                     else
                     {
@@ -155,8 +156,9 @@ namespace Sistema
                     fila[qtdfila - 1] = null;
                     qtdfila--;
                 }
+            }
 
-            void alterarDado()
+            void alterarDados()
                 {
                     if (qtdfila == 0)
                     {
@@ -209,9 +211,11 @@ namespace Sistema
                     }             
                 
                 
-            }
+                }
 
             }
         }
+
+        
     }
-}
+
