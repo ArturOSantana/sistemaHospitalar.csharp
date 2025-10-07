@@ -1,4 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
+// See https://aka.ms/new-console-template for more information
 
 using System.Net.NetworkInformation;
 
@@ -149,7 +149,7 @@ namespace Sistema
                 {
                     Console.WriteLine($"Atendendo {fila[0].nome}");
 
-                    for (int i = 0; qtdfila < i; i++)
+                    for (int i = 0; i < qtdfila - 1; i++)
                     {
                         fila[i] = fila[i + 1];
                     }
