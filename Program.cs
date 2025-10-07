@@ -160,7 +160,7 @@ namespace Sistema
 
             void alterarDados()
                 {
-                    if (qtdfila == 0)
+                    if ( indice < 0 ||indice >= qtdfila)
                     {
                         Console.WriteLine("FILA VAZIA");
                     }
@@ -225,5 +225,6 @@ namespace Sistema
 
         
     }
+
 
 
