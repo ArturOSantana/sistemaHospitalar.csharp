@@ -16,7 +16,7 @@ namespace Sistema
 
             do
             {
-                Console.WriteLine("Escolha uma opção:");
+                Console.WriteLine("\n Escolha uma opção:");
                 Console.WriteLine(" 1 - Cadastrar Paciente");
                 Console.WriteLine(" 2 - Listar Pacientes");
                 Console.WriteLine(" 3 - Atender Pacientes ");
@@ -83,17 +83,25 @@ namespace Sistema
             void mostrarPacientes()
             {
                 Console.WriteLine("Lista Preferencial");
+                if (qtdPreferencial == 0)
+                {
+                    Console.WriteLine("FILA PREFERENCIAL VAZIA");
+                }
 
                 for (int i = 0; i < qtdPreferencial; i++)
                 {
-                    Console.Write($"Nome:{0}, Idade: {1} anos, CPF: {2}", filaPreferencial[i].nome, filaPreferencial[i].idade, filaPreferencial[i].cpf);
+                    Console.Write($"Nome:{filaPreferencial[i].nome}, Idade: {filaPreferencial[i].idade} anos, CPF: {filaPreferencial[i].cpf}");
                 }
 
                 Console.WriteLine("Lista dos não Preferencial");
+                if (qtdPreferencial == 0)
+                {
+                    Console.WriteLine("FILA NÃO PREFERENCIAL VAZIA");
+                }
                 for (int i = 0; i < qtdNorma; i++)
                 {
                     Console.WriteLine("-----------------");
-                    Console.Write($"Nome:{0}, Idade: {1} anos, CPF: {2}", filaNormal[i].nome, filaNormal[i].idade, filaNormal[i].cpf);
+                    Console.Write($"Nome:{filaNormal[i].nome}, Idade: {filaNormal[i].idade} anos, CPF: {filaNormal[i].cpf}");
                 }
 
             }
@@ -107,7 +115,7 @@ namespace Sistema
                 }
                 if (qtdPreferencial > 0)
                 {
-                    Console.WriteLine("ATENDO PREFERENCIAL");
+                    Console.WriteLine($"ATENDENDO: {filaPreferencial[0].nome}");
                     for (int i = 0; i < qtdPreferencial - 1; i++)
                     {
                         filaPreferencial[i] = filaPreferencial[i + 1];
@@ -115,12 +123,25 @@ namespace Sistema
                     filaPreferencial[qtdPreferencial - 1] = null;
                     qtdPreferencial--;
 
+                    for (int i = 0; i < qtdNorma - 1; i++)
+                    {
+                        filaNormal[i] = filaNormal[i + 1];
+                    }
+                    filaPreferencial[qtdNorma - 1] = null;
+                    qtdPreferencial--;
 
                 }
 
             }
 
-            void alterarDados(){}
+            void alterarDados()
+            {
+                if (qtdNorma == 0 && qtdPreferencial == 0)
+                {
+                    Console.WriteLine();
+                }
+                
+            }
 
         }
     }

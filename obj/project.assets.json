@@ -8,24 +8,31 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/home/artur/.nuget/packages/": {}
+    "C:\\Users\\lab1067\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/artur/Documentos/csharp/sistemaHospitalar/sistemaHospitalar.csproj",
+      "projectUniqueName": "C:\\Users\\lab1067\\Documents\\santana\\sistemaHospitalar.csharp\\sistemaHospitalar.csproj",
       "projectName": "sistemaHospitalar",
-      "projectPath": "/home/artur/Documentos/csharp/sistemaHospitalar/sistemaHospitalar.csproj",
-      "packagesPath": "/home/artur/.nuget/packages/",
-      "outputPath": "/home/artur/Documentos/csharp/sistemaHospitalar/obj/",
+      "projectPath": "C:\\Users\\lab1067\\Documents\\santana\\sistemaHospitalar.csharp\\sistemaHospitalar.csproj",
+      "packagesPath": "C:\\Users\\lab1067\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lab1067\\Documents\\santana\\sistemaHospitalar.csharp\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/home/artur/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\lab1067\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -43,7 +50,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -64,7 +72,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.414/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
