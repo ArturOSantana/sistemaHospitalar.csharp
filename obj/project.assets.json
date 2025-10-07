@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/artur/Documentos/csharp/sistemaHospitalar/sistemaHospitalar.csproj",
+      "projectUniqueName": "/home/artur/Documentos/csharp/sistemaHospitalar.csharp/sistemaHospitalar.csproj",
       "projectName": "sistemaHospitalar",
-      "projectPath": "/home/artur/Documentos/csharp/sistemaHospitalar/sistemaHospitalar.csproj",
+      "projectPath": "/home/artur/Documentos/csharp/sistemaHospitalar.csharp/sistemaHospitalar.csproj",
       "packagesPath": "/home/artur/.nuget/packages/",
-      "outputPath": "/home/artur/Documentos/csharp/sistemaHospitalar/obj/",
+      "outputPath": "/home/artur/Documentos/csharp/sistemaHospitalar.csharp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/artur/.nuget/NuGet/NuGet.Config"

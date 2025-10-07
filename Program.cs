@@ -13,11 +13,6 @@ namespace Sistema
 
             string opcao;
             int qtdfila = 0;
-
-
-
-
-
             do
             {
                 Console.WriteLine("Escolha uma opção:");
@@ -27,7 +22,7 @@ namespace Sistema
                 Console.WriteLine(" 4 - Alterar Dados");
                 Console.WriteLine(" Q - sair");
                 opcao = Console.ReadLine();
-
+ 
 
                 switch (opcao)
                 {
@@ -45,6 +40,7 @@ namespace Sistema
                         break;
                     case "q":
                     case "Q":
+                        Console.WriteLine("SAINDO");
                         break;
 
                     default:
@@ -56,82 +52,89 @@ namespace Sistema
 
             void cadastrarPaciente()
             {
-
-
-
-
-
-                Paciente p = new Paciente();
-                Console.WriteLine("Nome:");
-                p.nome = Console.ReadLine();
-
-                Console.WriteLine("Idade:");
-                p.idade = int.Parse(Console.ReadLine());
-
-                Console.WriteLine("CPF:");
-                p.cpf = Console.ReadLine();
-
-                Console.WriteLine("É preferencial? S/N");
-                string aux = Console.ReadLine();
-                if (aux == "s" || aux == "S")
+                if (qtdfila >= 15)
                 {
-                    p.prioridade = true;
+                    Console.WriteLine("A fila está cheia");
                 }
                 else
                 {
-                    p.prioridade = false;
-                }
 
+                    Paciente p = new Paciente();
+                    Console.WriteLine("Nome:");
+                    p.nome = Console.ReadLine();
 
+                    Console.WriteLine("Idade:");
+                    p.idade = int.Parse(Console.ReadLine());
 
-                // Adicionando ele a fila 
-                if (p.prioridade == true)
-                {
-                    int posicao = 0;
-                    while (posicao < qtdfila && fila[posicao].prioridade == true)
+                    Console.WriteLine("CPF:");
+                    p.cpf = Console.ReadLine();
+
+                    Console.WriteLine("É preferencial? S/N");
+                    string aux = Console.ReadLine();
+
+                    if (aux == "s" || aux == "S")
                     {
-                        posicao++;
-                    }
-                    for (int i = qtdfila; i> posicao; i--)
-                    {
-                        fila[i] = fila[i- 1];
-                    }
-
-
-                    fila[posicao] = p;
-                }
-                else
-                {
-                    fila[qtdfila] = p;
-                }
-                qtdfila++;
-                Console.WriteLine($"QUANTIDADE DE PESSOAS NA FILA {qtdfila} ");
-
-                Console.WriteLine(fila[1]);
-
-
-
-                Console.WriteLine(p.nome + " Paciente Cadastrado com Sucesso");
-
-            }
-            void mostrarPacientes()
-            {
-               
-                for (int i = 0; i < qtdfila; i++)
-                {
-                     string r;
-                    
-                    if (fila[i].prioridade == true)
-                    {
-                        
-                         Console.WriteLine($"{fila[i].nome}, Idade: {fila[i].idade} CPF: {fila[i].cpf} É Prefencial? SIM");
+                        p.prioridade = true;
                     }
                     else
                     {
-                       
-                         Console.WriteLine($"{fila[i].nome}, Idade: {fila[i].idade} CPF: {fila[i].cpf} É Prefencial? NÃO");
+                        p.prioridade = false;
                     }
-                   
+
+
+                    // Adicionando ele a fila 
+                    if (p.prioridade == true)
+                    {
+                        int posicao = 0;
+                        while (posicao < qtdfila && fila[posicao].prioridade == true)
+                        {
+                            posicao++;
+                        }
+                        for (int i = qtdfila; i > posicao; i--)
+                        {
+                            fila[i] = fila[i - 1];
+                        }
+
+
+                        fila[posicao] = p;
+                    }
+                    else
+                    {
+                        fila[qtdfila] = p;
+                    }
+                    qtdfila++;
+                    Console.WriteLine($"QUANTIDADE DE PESSOAS NA FILA {qtdfila} ");
+
+                    Console.WriteLine(fila[1]);
+
+
+
+                    Console.WriteLine(p.nome + " Paciente Cadastrado com Sucesso\n");
+                }
+            }
+            void mostrarPacientes()
+            {
+                if (qtdfila == 0)
+                {
+                    Console.WriteLine("A FILA ESTÁ VAZIA");
+                }
+               
+                for (int i = 0; i < qtdfila; i++)
+                {
+                    string r;
+
+                    if (fila[i].prioridade == true)
+                    {
+
+                        Console.WriteLine($"\n{fila[i].nome}, \nIdade: {fila[i].idade} \nCPF: {fila[i].cpf} \n1 É Prefencial? SIM");
+                    }
+                    else
+                    {
+
+                        Console.WriteLine($"\n{fila[i].nome}\nIdade: {fila[i].idade}\nCPF: {fila[i].cpf}\nÉ Prefencial? NÃO");
+                        Console.WriteLine("-------------------------");
+                    }
+
                 }
             }
             void atenderpaciente()
@@ -161,8 +164,6 @@ namespace Sistema
                     }
                     else
                     {
-
-
 
                         Console.WriteLine("Digite o indice do paciente");
                         int indice = int.Parse(Console.ReadLine());
