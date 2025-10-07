@@ -86,15 +86,20 @@ namespace Sistema
                     if (p.prioridade == true)
                     {
                         int posicao = 0;
-                        while (posicao < qtdfila && fila[posicao].prioridade == true)
+                        for (int i = 0; i < qtdfila; i++)
                         {
-                            posicao++;
+                            if (fila[i].prioridade == true)
+                            {
+                                posicao++;
+                            }
+                            
                         }
-                        for (int i = qtdfila; i > posicao; i--)
+                      
+                         for (int i = qtdfila; i > posicao; i--)
                         {
                             fila[i] = fila[i - 1];
-                        }
-
+                        } 
+                        
 
                         fila[posicao] = p;
                     }
@@ -106,8 +111,6 @@ namespace Sistema
                     Console.WriteLine($"QUANTIDADE DE PESSOAS NA FILA {qtdfila} ");
 
                     Console.WriteLine(fila[1]);
-
-
 
                     Console.WriteLine(p.nome + " Paciente Cadastrado com Sucesso\n");
                 }
