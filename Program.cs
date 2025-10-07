@@ -129,7 +129,7 @@ namespace Sistema
                     if (fila[i].prioridade == true)
                     {
 
-                        Console.WriteLine($"\n{fila[i].nome}, \nIdade: {fila[i].idade} \nCPF: {fila[i].cpf} \n1 É Prefencial? SIM");
+                        Console.WriteLine($"\n{fila[i].nome}, \nIdade: {fila[i].idade} \nCPF: {fila[i].cpf} \nÉ Prefencial? SIM"); Console.WriteLine("-------------------------");
                     }
                     else
                     {
@@ -209,7 +209,7 @@ namespace Sistema
 
                             }
                         }
-                        while (opcao != "q" && opcao != "Q");
+                        while (alterador != "q" && alterador != "Q");
                     }             
                 
                 
