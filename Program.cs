@@ -36,7 +36,7 @@ namespace Sistema
                         atenderpaciente();
                         break;
                     case "4":
-                        cadastrarPaciente();
+                        alterarDado();
                         break;
                     case "q":
                     case "Q":
@@ -158,6 +158,7 @@ namespace Sistema
                     fila[qtdfila - 1] = null;
                     qtdfila--;
                 }
+            }
 
             void alterarDado()
                 {
@@ -217,4 +218,3 @@ namespace Sistema
             }
         }
     }
-}
